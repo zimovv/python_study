@@ -11,7 +11,7 @@ def decipher(cipher):
         v = ord(letter)
         limits = [('a', 'z'), ('A', 'Z')]
         for pair in limits:
-            if ord(pair[0]) <= ord(letter) <= ord(pair[1]):
+            if ord(pair[0]) <= v <= ord(pair[1]):
                 v -= 13
                 if v < ord(pair[0]):
                     v += 26
