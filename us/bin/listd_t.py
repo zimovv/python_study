@@ -19,8 +19,23 @@ def time_string(created_time):
 
 #TODO: please implement it
 def main(folder):
+    file_list = os.listdir(folder)
+    print("Directory of " + folder)
 
-    pass
+    def file_info(file):
+        f = folder + '\\' + file
+        created_time = os.stat(f).st_ctime
+        data = date_string(created_time)
+        time = time_string(created_time)
+        if os.path.isdir(f):
+            return data + ' ' + time + '\t' + r"<DIR>" + '\t\t' + file
+        else:
+            size = os.stat(f).st_size
+            return data + ' ' + time + '\t\t' + str(size) + '\t' + file
+
+    files_infos = map(file_info, file_list)
+    for file_infos in files_infos:
+        print(file_infos)
 
 if __name__ == "__main__":
     
