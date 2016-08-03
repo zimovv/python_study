@@ -12,9 +12,10 @@ def decipher(cipher):
         limits = [('a', 'z'), ('A', 'Z')]
         for pair in limits:
             if ord(pair[0]) <= ord(letter) <= ord(pair[1]):
-                v = v-13
+                v -= 13
                 if v < ord(pair[0]):
                     v += 26
+                #v = (v-ord(pair[0])-13+26)%26+ord(pair[0])  #another solution
                 break
         plain_text += chr(v)
 
