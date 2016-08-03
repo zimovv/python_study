@@ -45,4 +45,5 @@ if __name__ == "__main__":
         
     main(sys.argv[1])
 
-    
+# Firstly, cd to the folder of listd_t.py.
+# Then excute "python listd_t.py <path>" in CMD.
